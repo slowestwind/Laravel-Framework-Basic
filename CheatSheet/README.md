@@ -1,16 +1,20 @@
 -------------------------------------------------------------------------------
-                            PHP CHEAT SHEET
+                                     PHP CHEAT SHEET
 -------------------------------------------------------------------------------
 ## PHP FILES
 PHP file using any one of these four functions:
+
 - include : This will try to find and include the specified file each time it is
 invoked. If the file is not found, PHP will throw a warning, but will continue
 with the execution.
-•	 require : This will do the same as include , but PHP will throw an error
+
+-	 require : This will do the same as include , but PHP will throw an error
 instead of a warning if the file is not found.
-•	 include_once : This function will do what include does, but it will include
+
+-	 include_once : This function will do what include does, but it will include
 the file only the first time that it is invoked. Subsequent calls will be ignored.
-•	 require_once : This works the same as require , but it will include the file
+
+-	 require_once : This works the same as require , but it will include the file
 only the first time that it is invoked. Subsequent calls will be ignored.
 
 -------------------------------------------------------------------------------
