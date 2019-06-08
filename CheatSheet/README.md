@@ -261,3 +261,172 @@ var_dump($wheresRon); // 1 array_search is check the name in array if it is avai
 $wheresVoldemort = array_search('Voldemort', $names);
 var_dump($wheresVoldemort); // false
 ```
+---------------------------------------------------------------------------
+## CONTROL STRUCTURES
+---------------------------------------------------------------------------
+Control structure are used to alter the control flow using some conditions
+<strong>Types of Control Structures are:</strong>
+
+### CONDITIONAL CONTROL STRUCTURES
+#### IF-ELSE
+if the condition is true than statement1 is execute else statements2 is executed.
+
+```
+/////////////////////////////
+// if condition syntax example:
+echo "Before the conditional.";
+if (4 > 3) {
+  echo "Inside the conditional.";
+}
+
+if (3 > 4) {
+  echo "This will not be printed.";
+}
+echo "After the conditional.";
+
+/////////////////////////////
+// if else syntax example:
+if (2 > 3) {
+  echo "Inside the conditional.";
+} else {
+  echo "Inside the else.";
+}
+
+//////////////////////////////
+// if else ladder example :
+if (4 > 5) {
+  echo "Not printed";
+} elseif (4 > 4) {
+  echo "Not printed";
+} elseif (4 == 4) {
+  echo "Printed.";
+} elseif (4 > 2) {
+  echo "Not evaluated.";
+} else {
+  echo "Not evaluated.";
+}
+if (4 == 4) {
+  echo "Printed";
+}
+```
+
+#### SWITCH CASE
+It first evaluate one condition and than match the result with each case
+if it is matched than it execute the related statements.
+syntax example:
+```
+switch ($title) {
+  case 'Harry Potter':
+    echo "Nice story, a bit too long.";
+    break;
+  case 'Lord of the Rings':
+    echo "A classic!";
+    break;
+  default:
+    echo "Dunno that one.";
+    break;
+```
+### LOOPS
+Loops are control structure that execute some statement several times.
+
+#### WHILE LOOP
+It executes a block of code until the
+expression to evaluate returns false . Let's see one example:
+```
+<?php
+$i = 1;
+while ($i < 4) {
+  echo $i . " ";
+  $i++;
+}
+```
+#### DO WHILE LOOP
+It is same as the while loop and if the expression is
+false from the very beginning, the loop will be executed at least once.
+Let's see one example:
+```
+echo "with while: ";
+$i = 1;
+while ($i < 0) {
+  echo $i . " ";
+  $i++;
+}
+echo "with do-while: ";
+$i = 1;
+do {
+  echo $i . " ";
+  $i++;
+} while ($i < 0);
+```
+
+#### FOR LOOP
+The for loop is the most complex of the four loops. It defines an initialization
+expression, an exit condition, and the end of an iteration expression. Let's see one example:
+```
+for ($i = 1; $i < 10; $i++) {
+  echo $i . " ";
+}
+```
+#### FOREACH LOOP
+This loop is exclusive for arrays, and
+it allows you to iterate an array entirely, even if you do not know its keys. There are
+two options for the syntax, as you can see in the following examples:
+```
+$names = ['Harry', 'Ron', 'Hermione'];
+foreach ($names as $name) {
+  echo $name . " ";
+}
+foreach ($names as $key => $name) {
+  echo $key . " -> " . $name . " ";
+}
+```
+--------------------------------------------------------------------------------
+##                           FUNCTIONS
+--------------------------------------------------------------------------------
+<strong>NOTE :
+PHP does not support overloaded functions.
+</strong>
+
+Let's see a simple example:
+```
+function addNumbers($a, $b) {
+  $sum = $a + $b;
+  return $sum;
+}
+$result = addNumbers(2, 3);
+```
+<strong>
+- CALL BY VALUE FUNCTION
+</strong>
+```
+function modify($a) {
+  $a = 3;
+}
+$a = 2;
+modify($a);
+var_dump($a); // prints 2
+```
+<strong>
+- CALL BY REFERENCE FUNCTION
+</strong>
+```
+function modify(&$a) {
+  $a = 3;
+}
+$a=2;
+modify($a);
+var_dump($a); // print always 3
+```
+
+### RETURN STATEMENT
+You can have as many return statements as you want inside your function, but
+PHP will exit the function as soon as it finds one.
+```
+function loginMessage() {
+  if (isset($_COOKIE['username'])) {
+    return "You are " . $_COOKIE['username'];
+    } else {
+      return "You are not authenticated.";
+    }
+}
+```
