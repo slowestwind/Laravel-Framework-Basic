@@ -1,30 +1,26 @@
 -------------------------------------------------------------------------------
-                                     PHP CHEAT SHEET
+                            PHP CHEAT SHEET
 -------------------------------------------------------------------------------
 ## PHP FILES
 PHP file using any one of these four functions:
-
 - include : This will try to find and include the specified file each time it is
 invoked. If the file is not found, PHP will throw a warning, but will continue
 with the execution.
-
 -	 require : This will do the same as include , but PHP will throw an error
 instead of a warning if the file is not found.
-
 -	 include_once : This function will do what include does, but it will include
 the file only the first time that it is invoked. Subsequent calls will be ignored.
-
 -	 require_once : This works the same as require , but it will include the file
 only the first time that it is invoked. Subsequent calls will be ignored.
 
 -------------------------------------------------------------------------------
-## TYPE OF COMMENT 
+## TYPE OF COMMENT
 example :
 ```
 <?php
 /*
-* multiple line comment 
-* 
+* multiple line comment
+*
 */
 // let's print a message from php (single line comment)
 echo 'hello world';
@@ -33,11 +29,11 @@ require 'index.html'; (it will include html page otherwise through error message
 ?>
 ```
 
-##  VARIABLE 
+##  VARIABLE
 PHP variable start with $ sign.
 ```
 <?php
-$a = 1; // it will assign value 1 to variable a 
+$a = 1; // it will assign value 1 to variable a
 ?>
 ```
 
@@ -61,19 +57,19 @@ var_dump($number);  // php never mind to type juggling
 ?>
 ```
 
-## DIFFERENCE BETWEEN ADD AND CONCAT 
+## DIFFERENCE BETWEEN ADD AND CONCAT
 ```
 $a = 1;
 $b = 2;
 var_dump($a + $b); // 3 it will add two values.
 var_dump($a . $b); // 12  // . will concat two values.
-``` 
+```
 
-## OPERATOR 
+## OPERATOR
 Operators are elements that take some expressions—operands—and perform actions on them to get a result.
 Types  of OPERATORS are :
 
-### ARITHMETIC OPERATORS 
+### ARITHMETIC OPERATORS
 see the example :
 ```
 <?php
@@ -88,7 +84,7 @@ var_dump($a ** $b); // 1000
 var_dump(-$a); // -10
 ?>
 ```
-### ASSIGNEMENT OPERATORS 
+### ASSIGNEMENT OPERATORS
 ```
 <?php
 $a = 3 + 4 + 5 - 2;
@@ -131,7 +127,7 @@ var_dump($a !== $b); // true
 var_dump($a == $c); // false
 var_dump($a <> $c); // true
 ```
-### INCREMENT AND DECREMENT OPERATOR 
+### INCREMENT AND DECREMENT OPERATOR
 It used to increment/decrement variable value by 1.
 example :
 ```
@@ -142,7 +138,7 @@ $b = ++$a; // $a and $b are 5
 var_dump($a, $b);
 ```
 ------------------------------------------------------------------------------
-## WORKING WITH STRINGS 
+## WORKING WITH STRINGS
 learn by example :
 ```
 $text = 'How can a clam cram in a clean cream can? ';
@@ -155,7 +151,7 @@ echo strtoupper($text); // HOW CAN A CLAM CRAM IN A CLEAN CREAM CAN? (upper case
 
 echo strtolower($text); // how can a clam cram in a clean cream can? (lower case transformation)
 
-$text = str_replace('can', 'could', $text); 
+$text = str_replace('can', 'could', $text);
 echo $text; // How could a clam cram in a clean cream could? ( can is replaced by could string)
 
 echo substr($text, 2, 6); // w coul (return the string from char position 2 to 6)
@@ -178,7 +174,7 @@ $names2 = array('Harry', 'Ron', 'Hermione');
 
 //
 // it is kind of map which is implement using array in php
-// here 'name' is key and 'James Potter ' is value. 
+// here 'name' is key and 'James Potter ' is value.
 $status1 = [
 'name' => 'James Potter',
 'status' => 'dead'
@@ -188,7 +184,7 @@ $status2 = array(
 'status' => 'dead'
 );
 ```
-#### INSERTING INTO ARRAY 
+#### INSERTING INTO ARRAY
 example :
 ```
 $names = ['Harry', 'Ron', 'Hermione'];
@@ -202,8 +198,8 @@ $status['age'] = 32; // in status key age and value 32 will be added at last.
 print_r($names, $status);  // it will show the result
 ```
 
-#### REMOVE FROM ARRAY 
-example : 
+#### REMOVE FROM ARRAY
+example :
 ```
 $status = [
 'name' => 'James Potter',
@@ -214,7 +210,7 @@ print_r ($status);
 ```
 The new $status array contains the key name only.
 
-#### ACCESSING ELEMENTS OF ARRAY 
+#### ACCESSING ELEMENTS OF ARRAY
 example :
 ```
 <?php
@@ -224,7 +220,7 @@ $names[8] = 'Snape';
 $names[] = 'McGonagall';
 print_r($names);
 ```
-it will print 
+it will print
 Array
 (
 [0] => Harry
@@ -235,7 +231,7 @@ Array
 [9] => McGonagall
 )
 
-#### EMPTY AND ISSET FUNTIONS 
+#### EMPTY AND ISSET FUNTIONS
 example :
 ```
 $string = '';
@@ -248,7 +244,7 @@ var_dump(empty($names)); // false
 var_dump(isset($names[2])); // true (check if position contains the value then return true or false)
 var_dump(isset($names[3])); // false
 ```
-#### SEARCHING FOR ELEMENTS IN ARRAY 
+#### SEARCHING FOR ELEMENTS IN ARRAY
 example :
 ```
 $names = ['Harry', 'Ron', 'Hermione'];
@@ -265,5 +261,3 @@ var_dump($wheresRon); // 1 array_search is check the name in array if it is avai
 $wheresVoldemort = array_search('Voldemort', $names);
 var_dump($wheresVoldemort); // false
 ```
-
- 
